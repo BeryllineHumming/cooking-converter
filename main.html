@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cooking Converter</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    />
+  </head>
+  <body>
+    <div class="main-container">
+      <header><h1>Cooking Converter</h1></header>
+      <p>Pick an ingredient to convert!</p>
+      <div class="button-container">
+        <input
+          type="image"
+          class="which-ingredient butter"
+          src="/img/butter.png"
+          alt="Butter"
+        />
+        <input
+          type="image"
+          class="which-ingredient flour"
+          src="/img/flour.png"
+          alt="Flour"
+        />
+        <input
+          type="image"
+          class="which-ingredient sugar"
+          src="/img/sugar.png"
+          alt="Sugar"
+        />
+        <input
+          type="image"
+          class="which-ingredient cocoa"
+          src="/img/cocoa.png"
+          alt="Cocoa Powder"
+        />
+        <input
+          type="image"
+          class="which-ingredient yeast"
+          src="/img/yeast.png"
+          alt="Yeast"
+        />
+        <input
+          type="image"
+          class="which-ingredient oats"
+          src="/img/oats.png"
+          alt="Oats"
+        />
+      </div>
+      <div class="modal hidden">
+        <button class="close-modal">&times;</button>
+        <h2 id="ingredient"></h2>
+        <div class="input-container">
+          <div class="input-selectors select-type">
+            <p data-food="not">Type:</p>
+            <ul class="meas-dropdown" id="type-dropdown" data-food="not">
+              <li class="meas-select">
+                <div class="meas-title" id="type-title">Select</div>
+                <div><i class="bx bx-chevron-down"></i></div>
+                <ul class="meas-list" id="type-list">
+                  <li class="fltype">all-purpose flour</li>
+                  <li class="fltype">bread flour</li>
+                  <li class="sgtype">granulated sugar</li>
+                  <li class="sgtype">brown sugar</li>
+                  <li class="sgtype">powdered sugar</li>
+                  <li class="oatype">quick oats</li>
+                  <li class="oatype">rolled oats</li>
+                  <li class="oatype">steel-cut oats</li>
+                </ul>
+              </li>
+            </ul>
+            <p data-food="yeast">From:</p>
+            <ul class="meas-dropdown" id="type-dropdown-1" data-food="yeast">
+              <li class="meas-select">
+                <div class="meas-title" id="type-title-1">Select</div>
+                <div><i class="bx bx-chevron-down"></i></div>
+                <ul class="meas-list" id="type-list-1">
+                  <li>active dry yeast</li>
+                  <li>fresh yeast</li>
+                  <li>instant yeast</li>
+                </ul>
+              </li>
+            </ul>
+            <p data-food="yeast">To:</p>
+            <ul class="meas-dropdown" id="type-dropdown-2" data-food="yeast">
+              <li class="meas-select">
+                <div class="meas-title" id="type-title-2">Select</div>
+                <div><i class="bx bx-chevron-down"></i></div>
+                <ul class="meas-list" id="type-list-2">
+                  <li>active dry yeast</li>
+                  <li>fresh yeast</li>
+                  <li>instant yeast</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <input type="number" id="ingredient-amount" />
+          <div class="input-selectors">
+            <p>From:</p>
+            <ul class="meas-dropdown" id="from-dropdown">
+              <li class="meas-select">
+                <div class="meas-title" id="from-title">Select</div>
+                <div><i class="bx bx-chevron-down"></i></div>
+                <!-- <ul class="meas-list from-list" data-food="not yeast">
+                  <ul class="meas-list from-list" data-food="yeast"> -->
+                <ul class="meas-list" id="from-list">
+                  <li data-food="not">cups</li>
+                  <li>grams</li>
+                  <li>ounces</li>
+                  <li data-food="not">pounds</li>
+                  <li data-food="sticks">sticks</li>
+                  <li>tablespoons</li>
+                  <li data-food="yeast">teaspoons</li>
+                </ul>
+              </li>
+            </ul>
+            <p>To:</p>
+            <ul class="meas-dropdown" id="to-dropdown">
+              <li class="meas-select">
+                <div class="meas-title" id="to-title">Select</div>
+                <div><i class="bx bx-chevron-down"></i></div>
+                <ul class="meas-list" id="to-list">
+                  <li data-food="not">cups</li>
+                  <li>grams</li>
+                  <li>ounces</li>
+                  <li data-food="not">pounds</li>
+                  <li data-food="sticks">sticks</li>
+                  <li>tablespoons</li>
+                  <li data-food="yeast">teaspoons</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <button class="btn-convert">Convert</button>
+        </div>
+        <h2 class="output-container"></h2>
+      </div>
+      <div class="overlay hidden"></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.js"></script>
+  </body>
+</html>
